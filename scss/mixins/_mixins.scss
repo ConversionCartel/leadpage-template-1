@@ -1,0 +1,23 @@
+@mixin bp($point) {
+
+
+		@if $point == desktop {
+			@media (min-width: 800px) { @content; }
+		}
+		@else if $point == tablet {
+			@media (min-width: 675px) { @content; }
+		}
+		@else if $point == phone {
+			@media (min-width: 450px)  { @content; }
+		}
+
+
+}
+
+@mixin transition($transition-property:all, $transition-time:1s, $method:ease) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
